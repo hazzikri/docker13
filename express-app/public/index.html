@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express App - Docker Tutorial</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 500px;
+            border: 3px solid #74b9ff;
+        }
+        h1 {
+            color: #2d3436;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .badge {
+            background: #00b894;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            display: inline-block;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+        .info {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid #74b9ff;
+        }
+        .info p {
+            margin: 8px 0;
+            color: #2d3436;
+        }
+        a {
+            color: #0984e3;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border: 2px solid #0984e3;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background: #0984e3;
+            color: white;
+            transform: translateY(-2px);
+        }
+        .footer {
+            margin-top: 30px;
+            color: #636e72;
+            font-style: italic;
+        }
+        .node-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="node-icon">⚡</div>
+        <h1>Hello from Express!</h1>
+        <div class="badge">Node.js Container Active</div>
+        <div class="info">
+            <p><strong>🚀 Framework:</strong> Node.js Express</p>
+            <p><strong>🔌 Port:</strong> 3000</p>
+            <p><strong>📊 Status:</strong> ✅ Running</p>
+            <p><strong>🐳 Environment:</strong> Docker Container</p>
+        </div>
+        <p>Congratulations! Your Express.js application is successfully running inside a Docker container.</p>
+        
+        <div>
+            <a href="/api/hello">🔗 API Endpoint</a>
+            <a href="/health">💚 Health Check</a>
+        </div>
+        
+        <div class="footer">
+            <p><em>🎓 Docker Tutorial - Aceng Academy</em></p>
+            <p>Node.js + Express + Docker = 🔥</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple JavaScript untuk menambah interaktivitas
+        document.addEventListener('DOMContentLoaded', function() {
+            const badge = document.querySelector('.badge');
+            setInterval(() => {
+                badge.style.transform = badge.style.transform === 'scale(1.05)' ? 'scale(1)' : 'scale(1.05)';
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

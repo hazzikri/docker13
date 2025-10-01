@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FastAPI App - Docker Tutorial</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .logo {
+            font-size: 4em;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.8em;
+            font-weight: 700;
+        }
+        
+        .badge {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+            font-size: 1.1em;
+            box-shadow: 0 5px 15px rgba(0,184,148,0.3);
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .info-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .info-card p {
+            color: #636e72;
+            font-weight: 500;
+        }
+        
+        .api-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        
+        .api-link {
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .api-link.primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+        }
+        
+        .api-link.secondary {
+            background: linear-gradient(45deg, #fd79a8, #fdcb6e);
+        }
+        
+        .api-link.success {
+            background: linear-gradient(45deg, #00b894, #00cec9);
+        }
+        
+        .api-link.docs {
+            background: linear-gradient(45deg, #e17055, #f39c12);
+        }
+        
+        .api-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .footer {
+            margin-top: 40px;
+            color: #636e72;
+            font-style: italic;
+        }
+        
+        .features {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 25px 0;
+        }
+        
+        .features h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .features ul {
+            list-style: none;
+            text-align: left;
+        }
+        
+        .features li {
+            color: #636e72;
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .features li::before {
+            content: "⚡";
+            position: absolute;
+            left: 0;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .badge {
+            animation: pulse 3s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🚀</div>
+        <h1>Hello from FastAPI!</h1>
+        <div class="badge">High Performance API Container</div>
+        
+        <div class="info-grid">
+            <div class="info-card">
+                <h3>🐍 Framework</h3>
+                <p>FastAPI</p>
+            </div>
+            <div class="info-card">
+                <h3>🔌 Port</h3>
+                <p>8000</p>
+            </div>
+            <div class="info-card">
+                <h3>📊 Status</h3>
+                <p>✅ Active</p>
+            </div>
+            <div class="info-card">
+                <h3>🐳 Environment</h3>
+                <p>Docker</p>
+            </div>
+        </div>
+        
+        <div class="features">
+            <h3>🌟 FastAPI Features</h3>
+            <ul>
+                <li>Automatic API documentation</li>
+                <li>High performance (based on Starlette)</li>
+                <li>Type hints support</li>
+                <li>Async/await support</li>
+                <li>Data validation with Pydantic</li>
+            </ul>
+        </div>
+        
+        <p style="margin: 20px 0; color: #2c3e50; font-size: 1.1em;">
+            Selamat! Aplikasi FastAPI Anda berhasil berjalan di dalam Docker container dengan performa tinggi.
+        </p>
+        
+        <div class="api-links">
+            <a href="/api/hello" class="api-link primary">
+                🔗 API Hello
+            </a>
+            <a href="/api/info" class="api-link secondary">
+                ℹ️ App Info
+            </a>
+            <a href="/health" class="api-link success">
+                💚 Health Check
+            </a>
+            <a href="/docs" class="api-link docs">
+                📚 API Docs
+            </a>
+        </div>
+        
+        <div class="footer">
+            <p><em>🎓 Docker Tutorial - Aceng Academy</em></p>
+            <p>FastAPI + Docker = ⚡ Lightning Fast APIs</p>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.info-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(20px)';
+                    card.style.transition = 'all 0.5s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

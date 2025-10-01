@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask App - Docker Tutorial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 500px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .badge {
+            background: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        .info {
+            background: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🐍 Hello from Flask!</h1>
+        <div class="badge">Docker Container Berjalan</div>
+        <div class="info">
+            <p><strong>Framework:</strong> Python Flask</p>
+            <p><strong>Port:</strong> 5000</p>
+            <p><strong>Status:</strong> ✅ Aktif</p>
+        </div>
+        <p>Selamat! Aplikasi Flask Anda berhasil berjalan di dalam Docker container.</p>
+        <p>Coba akses endpoint API: <a href="/api/hello">/api/hello</a></p>
+        <p><em>Tutorial Docker - Aceng Academy</em></p>
+    </div>
+</body>
+</html>
